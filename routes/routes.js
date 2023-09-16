@@ -1,0 +1,11 @@
+const express=require("express")
+const route=express.Router()
+const {getUsers,registerUser,loginUser, getAllBlogs,addPost,deletePost, updatePost}=require("../controller/controller.js")
+route.get("/",getUsers)
+route.post("/register",registerUser)
+route.post("/login",loginUser)
+route.get("/blogs",getAllBlogs)
+route.post("/addpost",addPost)
+route.delete("/deletepost",deletePost)
+route.put("/updatepost",updatePost)
+module.exports={route}

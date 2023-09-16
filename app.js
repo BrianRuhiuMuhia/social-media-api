@@ -1,0 +1,10 @@
+const express=require("express")
+const app=express()
+const dotenv=require("dotenv")
+dotenv.config()
+const {route}=require("./routes/routes.js")
+app.use("/",route)
+app.use(express.json())
+app.listen(process.env.port,()=>{
+    console.log(`server running on port ${process.env.port}`)
+})
